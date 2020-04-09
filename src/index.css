@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(https://www.elsetge.cat/myimg/f/211-2117983_anime-digimon-tri-digimon-wallpaper-digimon-adventure-digimon.png); */
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 code {

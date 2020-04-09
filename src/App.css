@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+
+Button.agumon {
+  border-color: rgb(255, 0, 0);
+  color: black;
+  background: linear-gradient(45deg, rgb(245, 151, 28) 30%, rgb(231, 9, 9) 60%);
+  margin: 10px;
+}
+
+Button.gabumon{
+  border-color: rgb(68, 0, 255);
+  color: black;
+  background: linear-gradient(45deg, rgb(34, 142, 204) 30%, rgb(240, 236, 28)   90%);
+  margin: 10px;
+}
+
+Button.biyomon{
+  border-color: rgb(250, 148, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(250, 148, 199) 30%,  rgb(15, 35, 214)90%);
+  margin: 10px;
+}
+
+Button.palmon{
+  border-color: rgb(224, 52, 138);
+  color: black;
+  background: linear-gradient(45deg, rgb(224, 52, 138) 30%,  rgb(15, 214, 15)90%);
+  margin: 10px;
+}
+
+Button.patamon{
+  border-color: rgb(5, 34, 161);
+  color: black;
+  background: linear-gradient(45deg, rgb(43, 123, 243) 30%,  rgb(201, 122, 18)90%);
+  margin: 10px;
+}
+
+Button.gomamon{
+  border-color: rgb(248, 247, 245);
+  color: black;
+  background: linear-gradient(45deg, rgb(47, 128, 182) 30%,  rgb(249, 252, 253)90%);
+  margin: 10px;
+}
+
+Button.tentomon{
+  border-color: rgb(19, 197, 87);
+  color: black;
+  background: linear-gradient(45deg, rgb(246, 20, 51) 30%,  rgb(15, 214, 148)90%);
+  margin: 10px;
+}
+
+Button.gatomon{
+  border-color: rgb(250, 148, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(223, 169, 215) 30%,  rgb(238, 224, 103)90%);
+  margin: 10px;
+}
+
+.home{
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c2b2bff-e3ac-4ac3-a2df-e3aaf2b1eede/d8tstzl-794866c1-c792-4c86-a0ac-134722392180.png/v1/fill/w_1024,h_576,q_80,strp/digimon_adventure_tri_minimalist_wallpaper_by_greenmapple17_d8tstzl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOGMyYjJiZmYtZTNhYy00YWMzLWEyZGYtZTNhYWYyYjFlZWRlXC9kOHRzdHpsLTc5NDg2NmMxLWM3OTItNGM4Ni1hMGFjLTEzNDcyMjM5MjE4MC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.xk4e3DoiKM2hHM4MicEbPbN9GyNWqeCvrYjW1jDyvK4);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+/* .login{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgq9JMnRXRrb2HXy-T9h6dMvxHDAxyrEHH4gVOMWsWvupaJrhC&usqp=CAU);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+} */
+
+

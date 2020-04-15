@@ -6,18 +6,19 @@ import {Container, Row, CardColumns} from 'react-bootstrap'
 class TeamContainer extends Component {
 
     render() {
-        console.log(this.props.user.user_digimons)
+       
         return (
-            <div>
-                <h2>{this.props.user.username}'s Profile</h2>
+            <Container className="home">
+                <h2>{this.props.user.username}'s DigiTeam</h2>
+                <h3>Total digipoints: {this.props.user.point_collection}</h3>
                 <h3>Digimon List</h3>
 
                 <Container>
                     <Row>
-                    <CardColumns>
+                    <CardColumns width={6}>
                     {this.props.user.user_digimons.map((user_digimon) => {
                         return <TeamDigimonCard key={user_digimon.id} 
-                                            digimon={user_digimon.digimon}
+                                            digimon={user_digimon.digimon_information}
                                             // energy={user_digimon.digimon.energy}
                                             user_digimon={user_digimon} />
                     })
@@ -26,7 +27,7 @@ class TeamContainer extends Component {
                     </Row>
                 </Container>
 
-            </div>
+                </Container>
         );
     }
 

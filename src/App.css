@@ -86,7 +86,7 @@ Button.tentomon{
   margin: 10px;
 }
 
-Button.gatomon{
+Button.salamon{
   border-color: rgb(250, 148, 199);
   color: black;
   background: linear-gradient(45deg, rgb(223, 169, 215) 30%,  rgb(238, 224, 103)90%);
@@ -94,7 +94,7 @@ Button.gatomon{
 }
 
 .home{
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c2b2bff-e3ac-4ac3-a2df-e3aaf2b1eede/d8tstzl-794866c1-c792-4c86-a0ac-134722392180.png/v1/fill/w_1024,h_576,q_80,strp/digimon_adventure_tri_minimalist_wallpaper_by_greenmapple17_d8tstzl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOGMyYjJiZmYtZTNhYy00YWMzLWEyZGYtZTNhYWYyYjFlZWRlXC9kOHRzdHpsLTc5NDg2NmMxLWM3OTItNGM4Ni1hMGFjLTEzNDcyMjM5MjE4MC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.xk4e3DoiKM2hHM4MicEbPbN9GyNWqeCvrYjW1jDyvK4);
+  background-image: url(https://data.whicdn.com/images/324998354/original.png?t=1546988418);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -106,5 +106,59 @@ Button.gatomon{
   background-attachment: fixed;
   background-size: 100%;
 } */
+
+.player {
+  width: 240px;
+  height: 180px;
+  margin: 50px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+/* .weaponBtn {
+  width: 100px;
+  height: 50px;
+  display: inline;
+  margin: auto 15px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 25px;
+  background: #000;
+} */
+
+.player:nth-child(2) {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.winner {
+  width: 100px;
+  height: 55px;
+  margin: 10px auto;
+  color: brown;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+.player-image {
+  height: 200px;
+  width: auto;
+}
+/* button {
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 25px;
+  background: #000;
+  outline: none;
+} */
+
+button:hover {
+  cursor: pointer;
+}
 
 

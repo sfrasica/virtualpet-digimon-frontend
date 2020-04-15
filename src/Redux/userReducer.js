@@ -1,6 +1,8 @@
 let initialState = {
+    id: "",
     username: "",
     user_digimons: [],
+    point_collection: "",
     token: ""
 }
 
@@ -10,9 +12,11 @@ let userReducer = (state = initialState, action) => {
         case "SET_USER_INFORMATION":
             return {
                 ...state,
+                id: action.payload.user.id,
                 username: action.payload.user.username,
                 user_digimons: action.payload.user.user_digimons,
-                token: action.payload.token
+                token: action.payload.token,
+                point_collection: action.payload.user.point_collection
             }
 
             case "LOG_OUT":
@@ -31,14 +35,32 @@ let userReducer = (state = initialState, action) => {
             case "DELETE_DIGIMON_FROM_TEAM":
                 return {
                     ...state,
-                    user_digimons: state.user_digimons.filter(user_digimon => user_digimon.id !== action.payload)
+                    user_digimons: state.user_digimons.filter(user_digimon => user_digimon.digimon_information.id !== action.payload)
                 }
 
+            case "INCREASE_POINTS":
+                return {
+                    ...state,
+                    point_collection:  action.payload.point_collection
+                }
+
+            case "DECREASE_POINTS":
+                return {
+                    ...state,
+                    point_collection:  action.payload.point_collection
+                }
+
+              
+
+
+
+
+                
             case "UPDATE_DIGIMON_ENERGY":
                 // debugger
           
                 
-                    let updatedArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.userDigiInfo) {
+                    let updatedArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.id) {
                         return action.payload.uDigiObj
                     }
                              else {
@@ -46,7 +68,6 @@ let userReducer = (state = initialState, action) => {
 
                 return {...state, 
                     user_digimons: updatedArray
-           
                 }
         
             

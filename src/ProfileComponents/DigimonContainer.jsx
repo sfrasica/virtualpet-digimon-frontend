@@ -5,9 +5,13 @@ import {Container, Row, CardColumns} from 'react-bootstrap'
 
 const DigimonContainer = (props) => {
     //display Digimons
+    let rookieDigimons = props.digimons.filter(digiObj => {
+        return digiObj.level === "Rookie" ?  digiObj : null 
+    })
 
 
-    let arrayOfDigimon = props.digimons.map(digiObj => {
+
+    let arrayOfDigimon = rookieDigimons.map(digiObj => {
         if (digiObj.name.toLowerCase().includes(props.searchTerm.toLowerCase())) {
     return <DigimonCard key={digiObj.id} digimon = {digiObj}/> 
 }})
@@ -18,6 +22,7 @@ const DigimonContainer = (props) => {
             <h2>Choose your Digimon!</h2>
             
             <Container>
+            
                 <Row>
                 <CardColumns>
                 {arrayOfDigimon}

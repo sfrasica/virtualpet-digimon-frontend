@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Form from './components/Form'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import Game from './components/Game'
 import TeamContainer from './ProfileComponents/TeamContainer'
 import './App.css';
 import { withRouter } from 'react-router-dom'
@@ -43,7 +44,7 @@ class App extends React.Component{
       console.log(this.props.history.push)
       localStorage.token = resp.token
       this.props.setUserInformation(resp)
-          this.props.history.push("/profile")
+          this.props.history.push("/team")
       } 
       else {
         alert(resp.error)
@@ -125,9 +126,13 @@ class App extends React.Component{
     return <TeamContainer />
   }
 
+  renderGame = (routerProps) => {
+    return <Game />
+  }
+
 
   render(){
-    console.log(this.props)
+    
     return (
       <div className="App">
       <div className="login">
@@ -135,7 +140,8 @@ class App extends React.Component{
           <Switch>
             <Route path="/login" render={ this.renderForm } />
             <Route path="/register" render={ this.renderForm } />
-            <Route path="/profile" render={ this.renderProfile } />
+            <Route path="/team" render={ this.renderProfile } />
+            <Route path="/game" render={ this.renderGame} />
             <Route path="/" exact render={() => <Home />} />
             <Route render={ () => <p>Page not Found</p>} />
         
@@ -148,6 +154,7 @@ class App extends React.Component{
 
 const mapStateToProps = (reduxState) => {
   return {
+    user: reduxState.user,
     token: reduxState.user.token,
     username: reduxState.user.username
   }

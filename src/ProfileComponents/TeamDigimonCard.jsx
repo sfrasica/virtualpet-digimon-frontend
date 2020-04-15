@@ -1,69 +1,122 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import {connect} from 'react-redux'
-import {addDigimonToTeam, deleteDigimonFromTeam, updateDigimonEnergy} from '../Redux/actions'
-import { Button, Card, CardImg } from 'react-bootstrap'
+import {addDigimonToTeam, deleteDigimonFromTeam, updateDigimonEnergy, decreaseUserPoints} from '../Redux/actions'
+import { Button, Card, CardImg, Row } from 'react-bootstrap'
 const TeamDigimonCard = (props) => {
-    
+    const [clicked, handleClick] = useState(false)
+
+
     let {user_digimon} = props
-   let { id, digimon } = props.user_digimon
-   let {name, sprite, level, energy} = digimon
+   let {  digimon_information } = props.user_digimon
+   let { name, sprite, level, energy, evo1, evo2, evo3 } = digimon_information
  
-       
     let handleDeleteDigimonFromTeam = (e) => {
         console.log(props.user_digimon.id)
         // console.log(props.energy)
-        props.deleteDigimonFromTeam(props.user_digimon.id)
+        props.deleteDigimonFromTeam(props.user_digimon.digimon_information.id)
     }
 
     let handleUpdateDigimonEnergy = () => {
         
-        console.log(user_digimon.id)
-        let increaseEnergy = digimon.energy + 5
+        let id = props.user_digimon.digimon_information.id
+        console.log(user_digimon.digimon_information.id)
+        let increaseEnergy = digimon_information.energy + 5
+        let decreasePointAmount = props.user.point_collection - 7
+
+        props.user.point_collection >= 7 ?
+    fetch(`http://localhost:3000/users/${props.user.id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+                'Authorization': `bearer ${localStorage.token}`
+            
+            },
+            body: JSON.stringify(
+                {point_collection: decreasePointAmount}
+            )
+        })
+        .then(resp => resp.json())
+        .then(userObj => {
+            props.decreaseUserPoints(userObj)
         fetch(`http://localhost:3000/user_digimons/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",
-                'Authorization': `bearer ${props.token}`
-                // "Authorization": `bearer ${localStorage.token}`
+                'Authorization': `bearer ${localStorage.token}`
             },
             body: JSON.stringify(
-                {...digimon, energy: digimon.energy + increaseEnergy}
+                {...user_digimon, energy: increaseEnergy}
             )
         })
         .then(resp => resp.json())
         .then(uDigiObj => {
             console.log(uDigiObj)
-            
-            props.updateDigimonEnergy(id, increaseEnergy, uDigiObj)
+            props.updateDigimonEnergy(uDigiObj.id, increaseEnergy, uDigiObj) 
+        
             })
-    }
 
-    // state={
-    //     objectKey: {name: "hello", weight: 20},
-    //     string: "goodbye"
-    //     }
-    //     and you just want to change the state of weight, your setState would have to look like this:
-    //     this.setState({
-    //          objectKey: {...this.state.objectKey, weight: 25}
-    //     })
 
+            
+
+        })
+                :
+                
+                alert("You don't have enough digipoints. Go play the game to get more.")
+//fetch to decrease user's point_collection after increasing digimon energy
+          
+            
+        
+            
+            
+     }
     
+
+
+
+
+
+
+    console.log(name)
     return (
-       
+        // onClick={() => handleClick(clicked + 1)} /> 
     <Fragment>
-        <Card>
-       <li>Name: {name}</li>
-       <li>Level: {level}</li>
-       <li>Energy: {energy}</li>
+
+        <Card style={{background: (0, 0, 0, 0)}}>
+       Name: {name}<br/>
+       Level: {level}<br/>
+       Energy: {energy === null ? 0 : energy}
        <CardImg variant="top" src={sprite}/>
        {/* <Button variant="primary" className="gabumon" onClick={handleAddDigimonToTeam}>{name}</Button> */}
-       <Button variant="primary" className="gabumon" onClick={handleDeleteDigimonFromTeam}>Delete {name} from your team</Button>
-       <Button variant='outline-secondary' className="agumon" onClick={handleUpdateDigimonEnergy}>Increase {name} energy level</Button>
+       <Button variant="dark" onClick={handleDeleteDigimonFromTeam}>Delete {name} from your team</Button>
+       <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Increase {name} energy level</Button>
+     
+           <div>
+                { clicked 
+                
+                    ?
+
+                    <div className="meta">
+                    <Row>
+                    <CardImg variant="top" src={evo1}/>
+                    <CardImg variant="top" src={evo2}/>
+                    <CardImg variant="top" src={evo3}/>
+                    </Row>
+                    </div>
+                    
+                    :
+
+                    null
+                    
+                     }
+                
+                </div>
+                <Button variant='primary' className={`${name}`.toLowerCase()} onClick={() => handleClick(!clicked)}> View Evolution Path</Button> 
        </Card>
  </Fragment>
        
     )
 };
+
 
 const getDigimon = (reduxState) => {
     // console.log(reduxState.user.user_digimons)
@@ -75,7 +128,8 @@ const getDigimon = (reduxState) => {
 const mapDispatchToProps = {
     addDigimonToTeam,
     deleteDigimonFromTeam,
-    updateDigimonEnergy
+    updateDigimonEnergy,
+    decreaseUserPoints
 }
 
 export default connect(getDigimon, mapDispatchToProps)(TeamDigimonCard);

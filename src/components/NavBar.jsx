@@ -34,7 +34,11 @@ const NavBar = (props) => {
           <br/>
         </Nav.Link>
         <Nav.Link>
-          <NavLink className="" to="/profile">Profile</NavLink>
+          <NavLink className="" to="/team">Team</NavLink>
+          <br/>
+          </Nav.Link>
+          <Nav.Link>
+          <NavLink className="" to="/game">Game</NavLink>
           <br/>
           </Nav.Link>
           </Nav>

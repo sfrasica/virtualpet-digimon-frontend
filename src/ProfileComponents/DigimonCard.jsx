@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react'
 import {connect} from 'react-redux'
 import {addDigimonToTeam} from '../Redux/actions'
-import { Button, Card, Container, Column, Row, CardImg } from 'react-bootstrap'
+import { Button, Card, Container, Column, Row, CardImg, Alert } from 'react-bootstrap'
 const DigimonCard = (props) => {
     
     
     let handleAddDigimonToTeam = (e) => {
-        // console.log(user)
-       
-       console.log(props.user.user_digimons)
-        props.addDigimonToTeam(props)
+        // console.log(props.user.user_digimons)
+        props.user.user_digimons.length <= 5 ? props.addDigimonToTeam(props): alert("The maximum number of Digimon allowed on your team is 6.")
+    //    console.log(props.user.user_digimons)
+        
+        
             }
+        
        
   
 
@@ -19,11 +21,11 @@ const DigimonCard = (props) => {
     return (
        
     <Fragment>
-        <Card>
-       <li>{name}</li>
+        <Card style={{background: 0}}>
+       {name}
        <CardImg variant="top" src={sprite}/>
-       <p>Energy: {energy}</p>
-       <Button variant="primary" className="gabumon" onClick={handleAddDigimonToTeam}>Add {name} to your Team</Button>
+       <p>Energy: {energy === undefined ? 0 : energy}</p>
+       <Button variant="primary" className={`${name}`.toLowerCase()}  onClick={handleAddDigimonToTeam}>Add {name} to your Team</Button>
        </Card>
        {/* <Button variant="primary" className="gabumon" onClick={handleDeleteDigimonFromTeam}>{name}</Button> */}
        </Fragment>

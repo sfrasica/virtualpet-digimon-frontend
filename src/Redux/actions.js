@@ -32,6 +32,20 @@ export const logOut = () => {
     }
 }
 
+export const increasePoints = userObj => {
+    return {
+        type: "INCREASE_POINTS",
+        payload: userObj
+    }
+}
+
+export const decreaseUserPoints = (userObj) => {
+return {
+    type: "DECREASE_POINTS",
+    payload: userObj
+
+    }
+}
 
 //User Digimon actions
 export const addDigimonToTeam = (props) => {
@@ -96,17 +110,24 @@ export const deletedDigimon = (id) => {
  }
 }
 
+
+
+
+
+
+
+
 // export const updateDigimonEnergy = (id) => {
 //     return (dispatch) => {
 //         
 //     }
 // }
 
-export const updateDigimonEnergy = (userDigiInfo, increaseEnergy, uDigiObj) => {
+export const updateDigimonEnergy = (id, increaseEnergy, uDigiObj) => {
     console.log(increaseEnergy)
     return {
         type: "UPDATE_DIGIMON_ENERGY",
-        payload: {userDigiInfo, increaseEnergy, uDigiObj}
+        payload: {id, increaseEnergy, uDigiObj}
     }
 }
 

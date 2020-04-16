@@ -60,7 +60,7 @@ class Game extends Component {
         let {point_collection} = this.props.user
         let {id} = this.props.user
     
-        let increasePointAmount = point_collection + 1000
+        let increasePointAmount = point_collection + 25
     
         fetch(`http://localhost:3000/users/${id}`, {
             method: "PATCH",

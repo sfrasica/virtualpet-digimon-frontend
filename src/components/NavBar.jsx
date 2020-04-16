@@ -6,13 +6,13 @@ import {Nav, Navbar, Form, FormControl} from 'react-bootstrap'
 
 const NavBar = (props) => {
 
-  const [submitted, handleSubmit] = useState(false)
+  // const [submitted, handleSubmit] = useState(false)
 
 
     const handleClick = () => {
         console.log("Logging out");
         props.logOut()
-        handleSubmit(!submitted)
+        // handleSubmit(!submitted)
         localStorage.clear()
         
     }
@@ -27,19 +27,16 @@ const NavBar = (props) => {
       <Navbar bg="dark" variant="dark">
         <Nav fill variant="tabs">
         <Nav.Link>
-          <NavLink className="" to="/">DigiFarm</NavLink>
-        </Nav.Link>
-        <> {submitted ? 
-          <>
-        <Nav.Link>
           <NavLink className="" to="/login">Login</NavLink>
           <br/>
           </Nav.Link>
           <Nav.Link>
           <NavLink className="" to="/register">Register</NavLink>
           <br/>
-        </Nav.Link></> : null}    </>
-       
+        </Nav.Link>       
+        <Nav.Link>
+          <NavLink className="" to="/">DigiFarm</NavLink>
+        </Nav.Link>
         <Nav.Link>
           <NavLink className="" to="/team">Team</NavLink>
           <br/>

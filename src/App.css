@@ -267,6 +267,384 @@ Button.ophanimon{
 
 
 
+Button.veemon{
+  border-color: rgb(255, 251, 7);
+  color: black;
+  background: linear-gradient(45deg, rgb(6, 101, 211) 30%,  rgb(216, 199, 50)90%);
+  margin: 10px;
+}
+
+Button.exveemon{
+  border-color: rgb(255, 251, 7);
+  color: black;
+  background: linear-gradient(45deg, rgb(6, 101, 211) 30%,  rgb(216, 199, 50)90%);
+  margin: 10px;
+}
+
+Button.paildramon{
+  border-color: rgb(255, 251, 7);
+  color: black;
+  background: linear-gradient(45deg, rgb(6, 101, 211) 30%,  rgb(216, 199, 50)90%);
+  margin: 10px;
+}
+
+Button.imperialdrafmmon{
+  border-color: rgb(255, 251, 7);
+  color: black;
+  background: linear-gradient(45deg, rgb(6, 101, 211) 30%,  rgb(216, 199, 50)90%);
+  margin: 10px;
+}
+
+
+Button.wormmon{
+  border-color: rgb(194, 50, 151);
+  color: black;
+  background: linear-gradient(45deg, rgb(73, 216, 54) 30%,  rgb(136, 28, 158)90%);
+  margin: 10px;
+}
+
+Button.stingmon{
+  border-color: rgb(194, 50, 151);
+  color: black;
+  background: linear-gradient(45deg, rgb(73, 216, 54) 30%,  rgb(136, 28, 158)90%);
+  margin: 10px;
+}
+
+Button.dinobeemon{
+  border-color: rgb(194, 50, 151);
+  color: black;
+  background: linear-gradient(45deg, rgb(73, 216, 54) 30%,  rgb(136, 28, 158)90%);
+  margin: 10px;
+}
+
+Button.imperialdramondm{
+  border-color: rgb(194, 50, 151);
+  color: black;
+  background: linear-gradient(45deg, rgb(73, 216, 54) 30%,  rgb(136, 28, 158)90%);
+  margin: 10px;
+}
+
+Button.guilmon{
+  border-color: rgb(187, 2, 2);
+  color: black;
+  background: linear-gradient(45deg, rgb(209, 9, 9) 30%,  rgb(117, 106, 7)90%);
+  margin: 10px;
+}
+
+Button.growlmon{
+  border-color: rgb(187, 2, 2);
+  color: black;
+  background: linear-gradient(45deg, rgb(209, 9, 9) 30%,  rgb(117, 106, 7)90%);
+  margin: 10px;
+}
+
+Button.wargrowlmon{
+  border-color: rgb(187, 2, 2);
+  color: black;
+  background: linear-gradient(45deg, rgb(209, 9, 9) 30%,  rgb(117, 106, 7)90%);
+  margin: 10px;
+}
+
+Button.gallantmon{
+  border-color: rgb(187, 2, 2);
+  color: black;
+  background: linear-gradient(45deg, rgb(209, 9, 9) 30%,  rgb(117, 106, 7)90%);
+  margin: 10px;
+}
+
+Button.renamon{
+  border-color: rgb(172, 169, 170);
+  color: black;
+  background: linear-gradient(45deg, rgb(157, 101, 202) 30%,  rgb(238, 224, 103)90%);
+  margin: 10px;
+}
+
+Button.kyubimon{
+  border-color: rgb(172, 169, 170);
+  color: black;
+  background: linear-gradient(45deg, rgb(157, 101, 202) 30%,  rgb(238, 224, 103)90%);
+  margin: 10px;
+}
+
+Button.taomon{
+  border-color: rgb(172, 169, 170);
+  color: black;
+  background: linear-gradient(45deg, rgb(157, 101, 202) 30%,  rgb(238, 224, 103)90%);
+  margin: 10px;
+}
+
+Button.sakuyamon{
+  border-color: rgb(172, 169, 170);
+  color: black;
+  background: linear-gradient(45deg, rgb(157, 101, 202) 30%,  rgb(238, 224, 103)90%);
+  margin: 10px;
+}
+
+Button.demidevimon{
+  border-color: rgb(62, 197, 29);
+  color: black;
+  background: linear-gradient(45deg, rgb(82, 109, 196) 30%,  rgb(214, 12, 46)90%);
+  margin: 10px;
+}
+
+Button.devimon{
+  border-color: rgb(62, 197, 29);
+  color: black;
+  background: linear-gradient(45deg, rgb(82, 109, 196) 30%,  rgb(214, 12, 46)90%);
+  margin: 10px;
+}
+
+Button.phantomon{
+  border-color: rgb(62, 197, 29);
+  color: black;
+  background: linear-gradient(45deg, rgb(82, 109, 196) 30%,  rgb(214, 12, 46)90%);
+  margin: 10px;
+}
+
+Button.piedmon{
+  border-color: rgb(62, 197, 29);
+  color: black;
+  background: linear-gradient(45deg, rgb(82, 109, 196) 30%,  rgb(214, 12, 46)90%);
+  margin: 10px;
+}
+
+Button.betamon{
+  border-color: rgb(7, 20, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(243, 156, 26) 30%,   rgb(23, 134, 29)90%);
+  margin: 10px;
+}
+
+Button.seadramon{
+  border-color: rgb(7, 20, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(243, 156, 26) 30%,   rgb(23, 134, 29)90%);
+  margin: 10px;
+}
+
+Button.megaseadramon{
+  border-color: rgb(7, 20, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(243, 156, 26) 30%,   rgb(23, 134, 29)90%);
+  margin: 10px;
+}
+
+Button.metalseadramon{
+  border-color: rgb(7, 20, 199);
+  color: black;
+  background: linear-gradient(45deg, rgb(243, 156, 26) 30%,   rgb(23, 134, 29)90%);
+  margin: 10px;
+}
+
+Button.botamon{
+  border-color: rgb(26, 172, 57);
+  color: black;
+  background: linear-gradient(45deg, rgb(119, 117, 114) 30%,  rgb(207, 29, 29)90%);
+  margin: 10px;
+}
+
+Button.darktyrannomon{
+  border-color: rgb(26, 172, 57);
+  color: black;
+  background: linear-gradient(45deg, rgb(119, 117, 114) 30%,  rgb(207, 29, 29)90%);
+  margin: 10px;
+}
+
+Button.metaltyrannomon{
+  border-color: rgb(26, 172, 57);
+  color: black;
+  background: linear-gradient(45deg, rgb(119, 117, 114) 30%,  rgb(207, 29, 29)90%);
+  margin: 10px;
+}
+
+Button.machinedramon{
+  border-color: rgb(26, 172, 57);
+  color: black;
+  background: linear-gradient(45deg, rgb(119, 117, 114) 30%,  rgb(207, 29, 29)90%);
+  margin: 10px;
+}
+
+Button.gaomon{
+  border-color: rgb(221, 25, 25);
+  color: black;
+  background: linear-gradient(45deg, rgb(233, 228, 232) 30%,  rgb(41, 64, 199)90%);
+  margin: 10px;
+}
+
+Button.gaogamon{
+  border-color: rgb(221, 25, 25);
+  color: black;
+  background: linear-gradient(45deg, rgb(233, 228, 232) 30%,  rgb(41, 64, 199)90%);
+  margin: 10px;
+}
+
+Button.machgaogamon{
+  border-color: rgb(221, 25, 25);
+  color: black;
+  background: linear-gradient(45deg, rgb(233, 228, 232) 30%,  rgb(41, 64, 199)90%);
+  margin: 10px;
+}
+
+Button.miragegaogamon{
+  border-color: rgb(221, 25, 25);
+  color: black;
+  background: linear-gradient(45deg, rgb(233, 228, 232) 30%,  rgb(41, 64, 199)90%);
+  margin: 10px;
+}
+
+Button.coronamon{
+  border-color: rgb(250, 148, 148);
+  color: black;
+  background: linear-gradient(45deg, rgb(221, 153, 25) 30%,  rgb(223, 18, 3)90%);
+  margin: 10px;
+}
+
+Button.firamon{
+  border-color: rgb(250, 148, 148);
+  color: black;
+  background: linear-gradient(45deg, rgb(221, 153, 25) 30%,  rgb(223, 18, 3)90%);
+  margin: 10px;
+}
+
+Button.flaremon{
+  border-color: rgb(250, 148, 148);
+  color: black;
+  background: linear-gradient(45deg, rgb(221, 153, 25) 30%,  rgb(223, 18, 3)90%);
+  margin: 10px;
+}
+
+Button.apollomon{
+  border-color: rgb(250, 148, 148);
+  color: black;
+  background: linear-gradient(45deg, rgb(221, 153, 25) 30%,  rgb(223, 18, 3)90%);
+  margin: 10px;
+}
+
+Button.blackgabumon{
+  border-color: rgb(111, 200, 216);
+  color: black;
+  background: linear-gradient(45deg, rgb(111, 114, 116) 30%,  rgb(43, 114, 221)90%);
+  margin: 10px;
+}
+
+Button.blackgarurumon{
+  border-color: rgb(111, 200, 216);
+  color: black;
+  background: linear-gradient(45deg, rgb(111, 114, 116) 30%,  rgb(43, 114, 221)90%);
+  margin: 10px;
+}
+
+Button.shadowweregarurumon{
+  border-color: rgb(111, 200, 216);
+  color: black;
+  background: linear-gradient(45deg, rgb(111, 114, 116) 30%,  rgb(43, 114, 221)90%);
+  margin: 10px;
+}
+
+Button.blackmetalgarurumon{
+  border-color: rgb(111, 200, 216);
+  color: black;
+  background: linear-gradient(45deg, rgb(111, 114, 116) 30%,  rgb(43, 114, 221)90%);
+  margin: 10px;
+}
+
+Button.blackagumon{
+  border-color: rgb(235, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(202, 190, 76) 30%,  rgb(19, 18, 15)90%);
+  margin: 10px;
+}
+
+Button.tyrannomon{
+  border-color: rgb(235, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(202, 190, 76) 30%,  rgb(19, 18, 15)90%);
+  margin: 10px;
+}
+
+Button.skullgreymon{
+  border-color: rgb(235, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(202, 190, 76) 30%,  rgb(19, 18, 15)90%);
+  margin: 10px;
+}
+
+Button.blackwargreymon{
+  border-color: rgb(235, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(202, 190, 76) 30%,  rgb(19, 18, 15)90%);
+  margin: 10px;
+}
+
+Button.impmon{
+  border-color: rgb(241, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(136, 48, 158) 30%,  rgb(243, 27, 27)90%);
+  margin: 10px;
+}
+
+Button.wizardmon{
+  border-color: rgb(241, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(136, 48, 158) 30%,  rgb(243, 27, 27)90%);
+  margin: 10px;
+}
+
+Button.baalmon{
+  border-color: rgb(241, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(136, 48, 158) 30%,  rgb(243, 27, 27)90%);
+  margin: 10px;
+}
+
+Button.beelzemon{
+  border-color: rgb(241, 14, 14);
+  color: black;
+  background: linear-gradient(45deg, rgb(136, 48, 158) 30%,  rgb(243, 27, 27)90%);
+  margin: 10px;
+}
+
+Button.mushroomon{
+  border-color: rgb(221, 208, 131);
+  color: black;
+  background: linear-gradient(45deg, rgb(171, 40, 204) 30%,  rgb(170, 94, 23)90%);
+  margin: 10px;
+}
+
+Button.woodmon{
+  border-color: rgb(221, 208, 131);
+  color: black;
+  background: linear-gradient(45deg, rgb(171, 40, 204) 30%,  rgb(170, 94, 23)90%);
+  margin: 10px;
+}
+
+Button.cherrymon{
+  border-color: rgb(221, 208, 131);
+  color: black;
+  background: linear-gradient(45deg, rgb(171, 40, 204) 30%,  rgb(170, 94, 23)90%);
+  margin: 10px;
+}
+
+Button.puppetmon{
+  border-color: rgb(221, 208, 131);
+  color: black;
+  background: linear-gradient(45deg, rgb(171, 40, 204) 30%,  rgb(170, 94, 23)90%);
+  margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -297,7 +675,7 @@ Button.ophanimon{
 
 
 .game{
-  background-image: url(https://www.wallpapermaiden.com/image/2017/05/14/sci-fi-world-destruction-virtual-city-fantasy-15807.png);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1638f217-9a3f-4feb-9cbe-cea1d73036e2/d69kj45-f2c21cc9-afa8-4eaf-bd8e-48b3d24b409b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MzhmMjE3LTlhM2YtNGZlYi05Y2JlLWNlYTFkNzMwMzZlMlwvZDY5a2o0NS1mMmMyMWNjOS1hZmE4LTRlYWYtYmQ4ZS00OGIzZDI0YjQwOWIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.y3VIb4NZsb_R600JmDGqXwr35N2ZF-OnFK7_ch0Gm-g);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;

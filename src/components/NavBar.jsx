@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {connect,} from 'react-redux'
 import {logOut, filterDigimons} from '../Redux/actions'
 import {Nav, Navbar, Form, FormControl} from 'react-bootstrap'
 
 const NavBar = (props) => {
 
+  const [submitted, handleSubmit] = useState(false)
+
+
     const handleClick = () => {
         console.log("Logging out");
         props.logOut()
+        handleSubmit(!submitted)
         localStorage.clear()
         
     }
@@ -23,16 +27,19 @@ const NavBar = (props) => {
       <Navbar bg="dark" variant="dark">
         <Nav fill variant="tabs">
         <Nav.Link>
-          <NavLink className="" to="/">Home</NavLink>
+          <NavLink className="" to="/">DigiFarm</NavLink>
         </Nav.Link>
+        <> {submitted ? 
+          <>
         <Nav.Link>
           <NavLink className="" to="/login">Login</NavLink>
           <br/>
           </Nav.Link>
-        <Nav.Link>
+          <Nav.Link>
           <NavLink className="" to="/register">Register</NavLink>
           <br/>
-        </Nav.Link>
+        </Nav.Link></> : null}    </>
+       
         <Nav.Link>
           <NavLink className="" to="/team">Team</NavLink>
           <br/>
@@ -53,7 +60,8 @@ const NavBar = (props) => {
 
 const mapStateToProps = (reduxState) => {
   return {
-    searchTerm: reduxState.digimons.searchTerm
+    searchTerm: reduxState.digimons.searchTerm,
+    user: reduxState.user
   }
 }
 

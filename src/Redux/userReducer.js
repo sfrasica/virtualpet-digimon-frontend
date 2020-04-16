@@ -84,6 +84,48 @@ let userReducer = (state = initialState, action) => {
                 user_digimons: digimonsArray
             }
 
+            case "UPDATE_TO_UlTIMATE":
+                // debugger
+            
+                
+                    let champDigimonsArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.userDigiId) {
+                        return action.payload.userDigiObj
+                    }
+                                else {
+                            return user_digimon }})
+    
+                return {...state, 
+                    user_digimons: champDigimonsArray
+                }
+
+            case "UPDATE_TO_MEGA":
+                // debugger
+            
+                
+                    let ultDigimonsArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.userDigiId) {
+                        return action.payload.userDigiObj
+                    }
+                                else {
+                            return user_digimon }})
+    
+                return {...state, 
+                    user_digimons: ultDigimonsArray
+                }
+
+            case "UPDATE_WARP_TO_MEGA":
+                // debugger
+            
+                
+                    let warpDigimonsArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.userDigiId) {
+                        return action.payload.userDigiObj
+                    }
+                                else {
+                            return user_digimon }})
+    
+                return {...state, 
+                    user_digimons: warpDigimonsArray
+                }
+
                 
         
             

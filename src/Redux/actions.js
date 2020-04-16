@@ -140,4 +140,31 @@ export const updateToChamp = (userDigiId, digiId, userDigiObj ) => {
     }
 }
 
+export const updateToUlt = (userDigiId, digiId, userDigiObj ) => {
+    console.log(userDigiId)
+
+    return {
+        type: "UPDATE_TO_ULTIMATE",
+        payload: {userDigiId, digiId, userDigiObj}
+    }
+}
+
+export const updateToMega = (userDigiId, digiId, userDigiObj ) => {
+    console.log(userDigiId)
+
+    return {
+        type: "UPDATE_TO_MEGA",
+        payload: {userDigiId, digiId, userDigiObj}
+    }
+}
+
+export const updateWarp = (userDigiId, digiId, userDigiObj ) => {
+    console.log(userDigiId)
+
+    return {
+        type: "UPDATE_WARP_TO_MEGA",
+        payload: {userDigiId, digiId, userDigiObj}
+    }
+}
+
 

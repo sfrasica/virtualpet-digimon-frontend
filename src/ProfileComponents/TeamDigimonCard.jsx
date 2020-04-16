@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from 'react'
 import {connect} from 'react-redux'
-import {addDigimonToTeam, deleteDigimonFromTeam, updateDigimonEnergy, decreaseUserPoints, updateToChamp} from '../Redux/actions'
+import {addDigimonToTeam, deleteDigimonFromTeam, updateDigimonEnergy, decreaseUserPoints, updateToChamp, updateToUlt, updateToMega, updateWarp} from '../Redux/actions'
 import { Button, Card, CardImg, Row } from 'react-bootstrap'
 const TeamDigimonCard = (props) => {
+    //first hook
     const [clicked, handleClick] = useState(false)
-
+   
 
     let {user_digimon} = props
    let {  digimon_information, digimon_id } = props.user_digimon
@@ -87,6 +88,73 @@ const TeamDigimonCard = (props) => {
             })
          
      }
+
+     let handleUpdateToUlt = () => {
+        let id = props.user_digimon.id
+        let digimon = props.user_digimon.digimon
+         console.log("Digivolve to Ultimate")
+         fetch(`http://localhost:3000/digivolve_to_ult`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+                'Authorization': `bearer ${localStorage.token}`
+            },
+            body: JSON.stringify({...user_digimon, digimon_id : evo_id}
+            )
+        })
+        .then(resp => resp.json())
+        .then(uDigiObj => {
+            console.log(uDigiObj, uDigiObj.digimon)
+            props.updateToChamp(uDigiObj.id, uDigiObj.digimon,  uDigiObj) 
+        
+            })
+         
+     }
+
+     let handleUpdateToMega = () => {
+        let id = props.user_digimon.id
+        let digimon = props.user_digimon.digimon
+         console.log("Digivolve to Mega")
+         fetch(`http://localhost:3000/digivolve_to_mega`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+                'Authorization': `bearer ${localStorage.token}`
+            },
+            body: JSON.stringify({...user_digimon, digimon_id : evo_id}
+            )
+        })
+        .then(resp => resp.json())
+        .then(uDigiObj => {
+            console.log(uDigiObj, uDigiObj.digimon)
+            props.updateToMega(uDigiObj.id, uDigiObj.digimon,  uDigiObj) 
+        
+            })
+         
+     }
+
+     let handleUpdateWarp = () => {
+        let id = props.user_digimon.id
+        let digimon = props.user_digimon.digimon
+         console.log("Digivolve to Champion")
+         fetch(`http://localhost:3000/digivolve_to_champ`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+                'Authorization': `bearer ${localStorage.token}`
+            },
+            body: JSON.stringify({...user_digimon, digimon_id : evo_id + 2 }
+            )
+        })
+        .then(resp => resp.json())
+        .then(uDigiObj => {
+            console.log(uDigiObj, uDigiObj.digimon)
+            props.updateWarp(uDigiObj.id, uDigiObj.digimon,  uDigiObj) 
+        
+            })
+         
+     }
+     
     
 
 
@@ -102,12 +170,12 @@ const TeamDigimonCard = (props) => {
         <Card style={{background: (0, 0, 0, 0)}}>
        <strong>Name: {name}</strong><br/>
        <strong>Level: {level}</strong><br/>
-       <strong>Energy: {energy === null ? 0 : energy}</strong>
+       <strong>Experience: {energy === null ? 0 : energy}</strong>
        <CardImg variant="top" src={sprite}/>
        {/* <Button variant="primary" className="gabumon" onClick={handleAddDigimonToTeam}>{name}</Button> */}
-       <Button variant="dark" onClick={handleDeleteDigimonFromTeam}>Delete {name} from your team</Button>
-       <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Increase {name} energy level</Button>
-     
+      <br/>
+      <div>{level === "Mega" && energy >= 500 ? <strong>Max Energy</strong>: <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>
+    
            <div>
                 { clicked 
                 
@@ -128,10 +196,17 @@ const TeamDigimonCard = (props) => {
                      }
                 
                 </div>
-                <Button variant='primary' className={`${name}`.toLowerCase()} onClick={() => handleClick(!clicked)}> View Evolution Path</Button> 
+                 {/* Using fn to change state created by hook  */}
+            {level === "Rookie" && energy >= 25 ?  <Button variant='primary' className={`${name}`.toLowerCase()} onClick={() => handleClick(!clicked)}> View Evolution Path</Button> : null }
             {level === "Rookie" && energy >= 50 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToChamp}> Digivolve to Champion!</Button> : null}
-     
+            {level === "Champion" && energy >= 150 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToUlt}> Digivolve to Ultimate!</Button> : null}
+            {level === "Ultimate" && energy >= 325 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToMega}> Digivolve to Mega!</Button> : null}
+            {level === "Rookie" && energy >= 200 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateWarp}> Warp Digivolve!</Button> :  null}
+            <br/>
+            <Button variant="dark" onClick={handleDeleteDigimonFromTeam}>Remove {name} from Team</Button>
+            
        </Card>
+       <br/>
  </Fragment>
        
     )
@@ -150,7 +225,11 @@ const mapDispatchToProps = {
     deleteDigimonFromTeam,
     updateDigimonEnergy,
     decreaseUserPoints,
-    updateToChamp
+    updateToChamp,
+    updateToUlt,
+    updateToMega,
+    updateWarp
+
 }
 
 export default connect(getDigimon, mapDispatchToProps)(TeamDigimonCard);

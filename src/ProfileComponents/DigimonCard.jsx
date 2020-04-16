@@ -25,7 +25,7 @@ const DigimonCard = (props) => {
        <strong>{name}</strong>
        <CardImg variant="top" src={sprite}/>
        {/* <strong>Energy: {energy === undefined ? 0 : energy}</strong> */}
-       <Button variant="primary" className="agumon"  onClick={handleAddDigimonToTeam}>Add {name} to your Team</Button>
+       <Button variant="primary" className={`${name}`.toLowerCase()}  onClick={handleAddDigimonToTeam}>Raise {name}</Button>
        </Card>
        {/* <Button variant="primary" className="gabumon" onClick={handleDeleteDigimonFromTeam}>{name}</Button> */}
        </Fragment>

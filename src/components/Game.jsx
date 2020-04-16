@@ -41,7 +41,7 @@ class Game extends Component {
         } else if ((playerOne === "virus" && playerTwo === "data") ||
         (playerOne === "data" && playerTwo === "vaccine") || (playerOne === "vaccine" && playerTwo === "virus")) {
           
-            return "You win! You earned 6 digipoints"
+            return "You win! You earned digipoints"
         } else {
             return "You lost to the DigiComputer!"
         }
@@ -60,7 +60,7 @@ class Game extends Component {
         let {point_collection} = this.props.user
         let {id} = this.props.user
     
-        let increasePointAmount = point_collection + 6
+        let increasePointAmount = point_collection + 9000
     
         fetch(`http://localhost:3000/users/${id}`, {
             method: "PATCH",
@@ -93,23 +93,24 @@ class Game extends Component {
         console.log(this.state.playerOne)
        console.log(this.props.user)
         return (
+            <div>
+                {localStorage.token ? 
             <div className="game">
             
             <Container>
-          
-              
-               <h3>Total DigiPoints: {this.props.user.point_collection ? this.props.user.point_collection : 0}</h3>
-                <h4>Rules: Select your type and battle! Vaccine beats Virus, Virus beats Data, Data beats Vaccine</h4>
+              <>
+               <h2 style={{color:"white"}}>Total DigiPoints: {this.props.user.point_collection ? this.props.user.point_collection : 0}</h2>
+                <h4 style={{color:"white"}}>Rules: Select your type and battle! Vaccine beats Virus, Virus beats Data, Data beats Vaccine</h4>
            
              
                 <Container>
-                <strong>Player: {this.props.user.username}</strong>
+                <strong style={{color:"white"}}>Player: {this.props.user.username}</strong>
                 <Player weapon={this.state.playerOne}/>
                 <Player weapon={this.state.playerTwo}/>
                
-                <strong>DigiComputer</strong>
+                <strong style={{color:"white"}} >DigiComputer</strong>
                 </Container>
-                <strong>Select type</strong>
+                <strong style={{color:"white"}} >Select type</strong>
                  <br/>
                 <Button variant='primary' onClick={() => this.selectWeapon("vaccine")}>Vaccine</Button>
                 <Button variant='danger' onClick={() => this.selectWeapon("virus")}>Virus</Button>
@@ -118,14 +119,17 @@ class Game extends Component {
                 <Button variant="dark" onClick={this.startGame}>BATTLE!</Button>
                 <>
                 <div>
-                <h4>
+                <h4 style={{color:"white"}}>
                 { this.state.winner ? this.selectWinner() : null }
                 </h4>
                 </div>
                 </>
-                { this.state.winner === "You win! You earned 6 digipoints" ? <Button variant="warning"onClick={this.handleIncreasePoints}>Collect your digipoints!</Button> : null}
-
+                { this.state.winner === "You win! You earned digipoints" ? <Button variant="warning"onClick={this.handleIncreasePoints}>Collect your digipoints!</Button> : null}
+                </> 
             </Container>
+
+            </div>
+            : <h2 >Please register or log in</h2> }
             </div>
         )
     }

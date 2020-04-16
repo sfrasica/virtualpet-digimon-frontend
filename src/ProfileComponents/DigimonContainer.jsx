@@ -25,7 +25,7 @@ const DigimonContainer = (props) => {
             <Container>
             
                 <Row>
-                <CardColumns>
+                <CardColumns xs={4} md={6}>
                 {arrayOfDigimon}
                 </CardColumns>
                 </Row>

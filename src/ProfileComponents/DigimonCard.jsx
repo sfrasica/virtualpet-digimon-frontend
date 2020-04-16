@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import {connect} from 'react-redux'
 import {addDigimonToTeam} from '../Redux/actions'
 import { Button, Card, Container, Column, Row, CardImg, Alert } from 'react-bootstrap'
+import { opacify } from 'polished'
 const DigimonCard = (props) => {
     
     
@@ -21,7 +22,7 @@ const DigimonCard = (props) => {
     return (
         // {`${name}`.toLowerCase()}
     <Fragment>
-        <Card style={{background: 0}}>
+        <Card style={{background: opacify(0.27, 'rgba(255, 255, 255, 0.1)')}}>
        <strong>{name}</strong>
        <CardImg variant="top" src={sprite}/>
        {/* <strong>Energy: {energy === undefined ? 0 : energy}</strong> */}

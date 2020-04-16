@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import {connect} from 'react-redux'
 import {addDigimonToTeam, deleteDigimonFromTeam, updateDigimonEnergy, decreaseUserPoints, updateToChamp, updateToUlt, updateToMega, updateWarp} from '../Redux/actions'
-import { Button, Card, CardImg, Row } from 'react-bootstrap'
+import { Button, Card, CardImg, Row, ProgressBar, srOnly } from 'react-bootstrap'
+import { opacify } from 'polished'
 const TeamDigimonCard = (props) => {
     //first hook
     const [clicked, handleClick] = useState(false)
@@ -167,14 +168,17 @@ const TeamDigimonCard = (props) => {
         // onClick={() => handleClick(clicked + 1)} /> 
     <Fragment>
 
-        <Card style={{background: (0, 0, 0, 0)}}>
+        <Card style={{background: opacify(0.27, 'rgba(255, 255, 255, 0.1)')}}>
        <strong>Name: {name}</strong><br/>
        <strong>Level: {level}</strong><br/>
        <strong>Experience: {energy === null ? 0 : energy}</strong>
        <CardImg variant="top" src={sprite}/>
        {/* <Button variant="primary" className="gabumon" onClick={handleAddDigimonToTeam}>{name}</Button> */}
       <br/>
-      <div>{level === "Mega" && energy >= 500 ? <strong>Max Energy</strong>: <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>
+      {/* <div>{level === "Rookie" &&  energy >= 200 ? <strong>Max Energy</strong> : <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>
+      <div>{level === "Champion" && energy >= 150 ? <strong>Max Energy</strong> : <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>*/}
+      {/* <div>{ energy >= 325 && level === "Ultimate" ? <strong>Max Energy</strong>: <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>  */}
+     
     
            <div>
                 { clicked 
@@ -197,13 +201,21 @@ const TeamDigimonCard = (props) => {
                 
                 </div>
                  {/* Using fn to change state created by hook  */}
-            {level === "Rookie" && energy >= 25 ?  <Button variant='primary' className={`${name}`.toLowerCase()} onClick={() => handleClick(!clicked)}> View Evolution Path</Button> : null }
-            {level === "Rookie" && energy >= 50 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToChamp}> Digivolve to Champion!</Button> : null}
-            {level === "Champion" && energy >= 150 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToUlt}> Digivolve to Ultimate!</Button> : null}
-            {level === "Ultimate" && energy >= 325 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToMega}> Digivolve to Mega!</Button> : null}
-            {level === "Rookie" && energy >= 200 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateWarp}> Warp Digivolve!</Button> :  null}
+            {level === "Rookie"  ?  <ProgressBar striped variant='primary' className={`${name}`.toLowerCase()} now={energy/50 * 100} label={`${Math.floor(energy/50 * 100)}%`} ></ProgressBar> : null }
+            {level === "Champion"  ?  <ProgressBar striped variant='success' className={`${name}`.toLowerCase()} now={energy/150 * 100} label={`${Math.floor(energy/150 * 100)}%`}></ProgressBar> : null }
+            {level === "Ultimate"  ?  <ProgressBar striped variant='danger' className={`${name}`.toLowerCase()} now={energy/325 * 100} label={`${Math.floor(energy/325 * 100)}%`}></ProgressBar> : null }
+            {level === "Mega"  ?  <ProgressBar striped variant='warning' className={`${name}`.toLowerCase()} now={energy/500 * 100} label={`${Math.floor(energy/500 * 100)}%` } srOnly></ProgressBar> : null }
+             <br/>
+            <div>{energy >= 500 && level === "Mega"? <strong>Max Energy</strong>: <Button variant='outline-secondary' className={`${name}`.toLowerCase()} onClick={handleUpdateDigimonEnergy}>Train with {name}</Button>}</div>
+
+            {level === "Rookie" &&  energy >= 25 ?  <Button variant='primary' className={`${name}`.toLowerCase()} onClick={() => handleClick(!clicked)}>Evolution Path</Button> : null }
             <br/>
-            <Button variant="dark" onClick={handleDeleteDigimonFromTeam}>Remove {name} from Team</Button>
+            {level === "Rookie" && energy >= 50 ? <Button variant='secondary-color-primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToChamp}>Digivolve!</Button> : null}
+            {level === "Champion" && energy >= 150 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToUlt}>Digivolve!</Button> : null}
+            {level === "Ultimate" && energy >= 325 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateToMega}>Digivolve!</Button> : null}
+            {level === "Rookie" && energy >= 200 ? <Button variant='primary' className={`${name}`.toLowerCase()} onClick={handleUpdateWarp}>Warp Digivolve!</Button> :  null}
+            <br/>
+            <Button variant="outline-dark" onClick={handleDeleteDigimonFromTeam}>Remove {name}</Button>
             
        </Card>
        <br/>

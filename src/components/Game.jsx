@@ -3,7 +3,7 @@ import Player from './Player'
 import { connect} from 'react-redux'
 import { Button, Container } from 'react-bootstrap'
 import { increasePoints } from '../Redux/actions';
-
+import rules from '../assets/rules.png'
 const weapons = ["virus", "data", "vaccine"];
 class Game extends Component {
     //add a state of won
@@ -37,19 +37,14 @@ class Game extends Component {
     selectWinner = () => {
         let { playerOne, playerTwo } = this.state;
         if (playerOne === playerTwo) {
-            return "You tied with the DigiComputer!!"
+            return "You tied with the DigiComputer!"
         } else if ((playerOne === "virus" && playerTwo === "data") ||
         (playerOne === "data" && playerTwo === "vaccine") || (playerOne === "vaccine" && playerTwo === "virus")) {
-            // this.setState({
-            //     win: true
-            // })
+          
             return "You win! You earned 6 digipoints"
         } else {
-            return "You lost to the DigiComputer :(((("
+            return "You lost to the DigiComputer!"
         }
-        // if (selectWinner() === "You win! You earned 15 digipoints") {
-        //     this.handleIncreasePoints()
-        // }
 
     }
 
@@ -98,35 +93,40 @@ class Game extends Component {
         console.log(this.state.playerOne)
        console.log(this.props.user)
         return (
-            <Container >
+            <div className="game">
+            
+            <Container>
           
               
-               <h2>Total Points: {this.props.user.point_collection ? this.props.user.point_collection : 0}</h2>
-      
+               <h3>Total DigiPoints: {this.props.user.point_collection ? this.props.user.point_collection : 0}</h3>
+                <h4>Rules: Select your type and battle! Vaccine beats Virus, Virus beats Data, Data beats Vaccine</h4>
            
              
-                {this.props.user.username}
+                <Container>
+                <strong>Player: {this.props.user.username}</strong>
                 <Player weapon={this.state.playerOne}/>
                 <Player weapon={this.state.playerTwo}/>
                
-                Evil DigiComputer
-                
-              
+                <strong>DigiComputer</strong>
+                </Container>
+                <strong>Select type</strong>
                  <br/>
-                <Button variant='outline-dark' onClick={() => this.selectWeapon("virus")}>Virus</Button>
-                <Button variant='outline-dark' onClick={() => this.selectWeapon("data")}>Data</Button>
-                <Button variant='outline-dark' onClick={() => this.selectWeapon("vaccine")}>Vaccine</Button>
-                <div>
-                { this.state.winner ? this.selectWinner() : null }
-               
-                </div>
-                <>
-                { this.state.winner === "You win! You earned 6 digipoints" ? <Button onClick={this.handleIncreasePoints}>Collect your digipoints!</Button> : null}
-                </>
-
+                <Button variant='primary' onClick={() => this.selectWeapon("vaccine")}>Vaccine</Button>
+                <Button variant='danger' onClick={() => this.selectWeapon("virus")}>Virus</Button>
+                <Button variant='success' onClick={() => this.selectWeapon("data")}>Data</Button>
+                <br/>
                 <Button variant="dark" onClick={this.startGame}>BATTLE!</Button>
+                <>
+                <div>
+                <h4>
+                { this.state.winner ? this.selectWinner() : null }
+                </h4>
+                </div>
+                </>
+                { this.state.winner === "You win! You earned 6 digipoints" ? <Button variant="warning"onClick={this.handleIncreasePoints}>Collect your digipoints!</Button> : null}
 
             </Container>
+            </div>
         )
     }
 

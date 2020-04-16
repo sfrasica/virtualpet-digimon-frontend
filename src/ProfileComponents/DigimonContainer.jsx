@@ -19,7 +19,8 @@ const DigimonContainer = (props) => {
     console.log(props.searchTerm)
     return (
         <Fragment>
-            <h2>Choose your Digimon!</h2>
+            <h1>Digimon</h1>
+            <h2>Create your Team!</h2>
             
             <Container>
             

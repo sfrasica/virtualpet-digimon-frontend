@@ -19,13 +19,13 @@ const DigimonCard = (props) => {
     
     let {name, level, energy, sprite} = props.digimon 
     return (
-       
+        // {`${name}`.toLowerCase()}
     <Fragment>
         <Card style={{background: 0}}>
-       {name}
+       <strong>{name}</strong>
        <CardImg variant="top" src={sprite}/>
-       <p>Energy: {energy === undefined ? 0 : energy}</p>
-       <Button variant="primary" className={`${name}`.toLowerCase()}  onClick={handleAddDigimonToTeam}>Add {name} to your Team</Button>
+       {/* <strong>Energy: {energy === undefined ? 0 : energy}</strong> */}
+       <Button variant="primary" className="agumon"  onClick={handleAddDigimonToTeam}>Add {name} to your Team</Button>
        </Card>
        {/* <Button variant="primary" className="gabumon" onClick={handleDeleteDigimonFromTeam}>{name}</Button> */}
        </Fragment>

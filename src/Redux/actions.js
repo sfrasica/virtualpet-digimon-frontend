@@ -131,4 +131,13 @@ export const updateDigimonEnergy = (id, increaseEnergy, uDigiObj) => {
     }
 }
 
+export const updateToChamp = (userDigiId, digiId, userDigiObj ) => {
+    console.log(userDigiId)
+
+    return {
+        type: "UPDATE_TO_CHAMP",
+        payload: {userDigiId, digiId, userDigiObj}
+    }
+}
+
 

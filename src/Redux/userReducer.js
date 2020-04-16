@@ -69,6 +69,22 @@ let userReducer = (state = initialState, action) => {
                 return {...state, 
                     user_digimons: updatedArray
                 }
+
+            case "UPDATE_TO_CHAMP":
+            // debugger
+        
+            
+                let digimonsArray = state.user_digimons.map(user_digimon => {if (user_digimon.id === action.payload.userDigiId) {
+                    return action.payload.userDigiObj
+                }
+                            else {
+                        return user_digimon }})
+
+            return {...state, 
+                user_digimons: digimonsArray
+            }
+
+                
         
             
             default:

@@ -8,10 +8,12 @@ class TeamContainer extends Component {
     render() {
        
         return (
-            <Container className="home">
-                <h2>{this.props.user.username}'s DigiTeam</h2>
-                <h3>Total digipoints: {this.props.user.point_collection}</h3>
-                <h3>Digimon List</h3>
+            <div className="team">
+            <Container >
+             {localStorage.token ? <><h2>{this.props.user.username}'s DigiTeam</h2>
+                <h3>Total DigiPoints: {this.props.user.point_collection ? this.props.user.point_collection : 0 }</h3></> : <h2>Please log in</h2> }
+                {/* <h2>{this.props.user.username}'s DigiTeam</h2>
+                <h3>Total DigiPoints: {this.props.user.point_collection ? this.props.user.point_collection : 0 }</h3> */}
 
                 <Container>
                     <Row>
@@ -28,6 +30,8 @@ class TeamContainer extends Component {
                 </Container>
 
                 </Container>
+                
+            </div>
         );
     }
 

@@ -93,11 +93,23 @@ Button.salamon{
   margin: 10px;
 }
 
-.home{
-  background-image: url(https://data.whicdn.com/images/324998354/original.png?t=1546988418);
+
+.team{
+  background-image: url(https://exitgenjutsu.files.wordpress.com/2015/05/digi-header1.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+  height: auto;
+  width: 1500px;
+}
+
+.home{
+  background-image: url(https://i.pinimg.com/originals/b7/8c/11/b78c1176e28e7836d82b83e195edead1.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  height: auto;
+  width: 1500px;
 }
 
 /* .login{
@@ -107,6 +119,14 @@ Button.salamon{
   background-size: 100%;
 } */
 
+
+.game{
+  background-image: url(https://lh3.googleusercontent.com/proxy/lJzMhvg1IWovnutajlRgB3uEay-rbfM7hPAiGNjFvHNdr9sy5LHctg_LrycuUM0qmFka1YEbzs1PaLS_dq5QP6t0prpq7cQFdGgiEw5G2_CpqZPAbykfoMFU);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  height: 1000px;
+}
 .player {
   width: 240px;
   height: 180px;
